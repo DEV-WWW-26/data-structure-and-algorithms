@@ -17,10 +17,10 @@ class TestDemo {
         System.out.println("Sorted array: " + Arrays.toString(arr));
 
         BinarySearch binarySearch = new BinarySearch();
-        Optional<Integer> result = binarySearch.findInSortedArray(arr, 8);
+        Optional<Integer> result = binarySearch.findInSortedArray(arr, 12);
 
         result.ifPresent(System.out::println);
 
-        assertThat(result).isPresent().hasValue(4);
+        assertThat(result).isPresent().hasValue(7);
     }
 }
