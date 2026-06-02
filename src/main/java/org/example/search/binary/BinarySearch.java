@@ -4,8 +4,8 @@ import java.util.Optional;
 
 public class BinarySearch {
 
-    public Optional<Integer> findInSortedArray(int[] arr, long searchKey) {
-        System.out.println("Searching for: " + searchKey);
+    public Optional<Integer> findInSortedArray(int[] arr, long target) {
+        System.out.println("Searching for: " + target);
         System.out.println("Array length: " + arr.length);
 
         int lower = 0;
@@ -20,7 +20,7 @@ public class BinarySearch {
 
             System.out.println("idx: " + idx);
 
-            if (arr[idx] == searchKey) {
+            if (arr[idx] == target) {
 
                 return Optional.of(idx);
 
@@ -29,7 +29,7 @@ public class BinarySearch {
                 return Optional.empty();
 
             } else {
-                if (arr[idx] < searchKey) {
+                if (arr[idx] < target) {
                     lower = idx + 1;
                 } else {
                     upper = idx - 1;
