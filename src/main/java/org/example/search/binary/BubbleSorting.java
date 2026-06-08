@@ -16,7 +16,7 @@ public class BubbleSorting {
             System.out.println("out = " + out);
             // Внутренний цикл (прямой)
             for (in = 0; in < out; in++) {
-                System.out.println("in = " + out);
+                System.out.println("in = " + in);
                 // Порядок нарушен?
                 if (a[in] > a[in + 1]) {
                     // Поменять местами
@@ -27,7 +27,7 @@ public class BubbleSorting {
     }
 
     private void swap(int[] a, int one, int two) {
-        System.out.println("Swapping " + a[one] + " and " + a[two]);
+        System.out.println("Swapping " + a[one] + " and " + a[two] + ", index: " + one + ", index: " + two);
         int temp = a[one];
         a[one] = a[two];
         a[two] = temp;
