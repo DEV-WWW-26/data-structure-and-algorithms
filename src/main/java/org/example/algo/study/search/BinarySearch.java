@@ -1,7 +1,10 @@
-package org.example.search.binary;
+package org.example.algo.study.search;
 
 import java.util.Optional;
 
+/**
+ * Complexity O(log n)
+ */
 public class BinarySearch {
 
     public Optional<Integer> findInSortedArray(int[] arr, long target) {

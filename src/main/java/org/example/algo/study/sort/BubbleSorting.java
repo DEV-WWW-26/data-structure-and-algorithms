@@ -1,10 +1,13 @@
-package org.example.search.binary;
+package org.example.algo.study.sort;
 
 import java.util.Arrays;
 
+/**
+ * Complexity O(N^2)
+ */
 public class BubbleSorting {
 
-    public void bubbleSort(int[] a) {
+    public void sort(int[] a) {
         int out, in;
         int nElems = a.length;
 
@@ -13,14 +16,15 @@ public class BubbleSorting {
 
         // Внешний цикл (обратный)
         for (out = nElems - 1; out > 1; out--) {
-            System.out.println("out = " + out);
+            System.out.println("outer cycle value " + a[out] + " index " + out);
             // Внутренний цикл (прямой)
             for (in = 0; in < out; in++) {
-                System.out.println("in = " + in);
+                System.out.println("inner cycle value " + a[in] + " index " + in);
                 // Порядок нарушен?
                 if (a[in] > a[in + 1]) {
                     // Поменять местами
                     swap(a, in, in + 1);
+                    System.out.println(Arrays.toString(a));
                 }
             }
         }
