@@ -1,5 +1,8 @@
 package org.example.algo.study.sort;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.util.Arrays;
 
 /**
@@ -7,29 +10,32 @@ import java.util.Arrays;
  */
 public class InsertMethodSorting {
 
+    private static final Logger log = LoggerFactory.getLogger(InsertMethodSorting.class);
+
     public void sort(int[] a) {
-        int in, out;
+        int in;
+        int out;
         // out - разделительный маркер
-        System.out.println(Arrays.toString(a));
+        log.info("{}", Arrays.toString(a));
         for (out = 1; out < a.length; out++) {
-            System.out.println("out index: " + out);
+            log.info("out index: {}", out);
             // Скопировать помеченный элемент
             int temp = a[out];
             // Начать перемещения с out
             in = out;
             // Пока не найден меньший элемент
             while (in > 0 && a[in - 1] >= temp) {
-                System.out.println("in index: " + out);
-                System.out.println("a[" + in + "] = " + a[in]);
+                log.info("in index: {}", out);
+                log.info("a[{}] = {}", in, a[in]);
                 // Сдвинуть элемент вправо
                 a[in] = a[in - 1];
                 // Перейти на одну позицию влево
                 --in;
-                System.out.println(Arrays.toString(a));
+                log.info("{}", Arrays.toString(a));
             }
             // Вставить помеченный элемент
             a[in] = temp;
-            System.out.println(Arrays.toString(a));
+            log.info("{}", Arrays.toString(a));
         }
     }
 }
