@@ -1,5 +1,8 @@
 package org.example.algo.study.sort;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.util.Arrays;
 
 /**
@@ -7,31 +10,33 @@ import java.util.Arrays;
  */
 public class BubbleSorting {
 
+    private static final Logger log = LoggerFactory.getLogger(BubbleSorting.class);
+
     public void sort(int[] a) {
         int out, in;
         int nElems = a.length;
 
-        System.out.println(Arrays.toString(a));
-        System.out.println("Length of array: " + nElems);
+        log.info("{}", Arrays.toString(a));
+        log.info("Length of array: {}", nElems);
 
         // Внешний цикл (обратный)
         for (out = nElems - 1; out > 1; out--) {
-            System.out.println("outer cycle value " + a[out] + " index " + out);
+            log.info("outer cycle value {}, index {}", a[out], out);
             // Внутренний цикл (прямой)
             for (in = 0; in < out; in++) {
-                System.out.println("inner cycle value " + a[in] + " index " + in);
+                log.info("inner cycle value {}, index {}", a[in], in);
                 // Порядок нарушен?
                 if (a[in] > a[in + 1]) {
                     // Поменять местами
                     swap(a, in, in + 1);
-                    System.out.println(Arrays.toString(a));
+                    log.info("{}", Arrays.toString(a));
                 }
             }
         }
     }
 
     private void swap(int[] a, int one, int two) {
-        System.out.println("Swapping " + a[one] + " and " + a[two] + ", index: " + one + ", index: " + two);
+        log.info("Swapping {} and {}, index: {}, index: {}", a[one], a[two], one, two);
         int temp = a[one];
         a[one] = a[two];
         a[two] = temp;

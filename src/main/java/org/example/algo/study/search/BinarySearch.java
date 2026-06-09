@@ -1,11 +1,16 @@
 package org.example.algo.study.search;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.util.Optional;
 
 /**
  * Complexity O(log n)
  */
 public class BinarySearch {
+
+    private static final Logger log = LoggerFactory.getLogger(BinarySearch.class);
 
     /**
      *
@@ -14,20 +19,20 @@ public class BinarySearch {
      * @return index of element
      */
     public Optional<Integer> findInSortedArray(int[] arr, long target) {
-        System.out.println("Searching for: " + target);
-        System.out.println("Array length: " + arr.length);
+        log.info("Searching for: {}", target);
+        log.info("Array length: {}", arr.length);
 
         int lower = 0;
         int upper = arr.length - 1;
         int idx;
 
-        System.out.println("lower: " + lower);
-        System.out.println("upper: " + upper);
+        log.info("lower: {}", lower);
+        log.info("upper: {}", upper);
 
         while (true) {
             idx = (lower + upper) / 2;
 
-            System.out.println("idx: " + idx);
+            log.info("idx: {}", idx);
 
             if (arr[idx] == target) {
 
@@ -44,8 +49,8 @@ public class BinarySearch {
                     upper = idx - 1;
                 }
 
-                System.out.println("lower: " + lower);
-                System.out.println("upper: " + upper);
+                log.info("lower: {}", lower);
+                log.info("upper: {}", upper);
             }
         }
     }
