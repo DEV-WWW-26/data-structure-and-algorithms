@@ -25,6 +25,7 @@ public class InsertMethodSorting {
                 a[in] = a[in - 1];
                 // Перейти на одну позицию влево
                 --in;
+                System.out.println(Arrays.toString(a));
             }
             // Вставить помеченный элемент
             a[in] = temp;

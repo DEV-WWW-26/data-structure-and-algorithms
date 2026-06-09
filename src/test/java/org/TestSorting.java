@@ -17,7 +17,7 @@ class TestSorting {
     @Test
     void testInsertMethodSorting() {
         InsertMethodSorting insertMethodSorting = new InsertMethodSorting();
-        insertMethodSorting.sort(generateRandomArray(15, 1, 50));
+        insertMethodSorting.sort(generateRandomArray(10, 1, 20));
     }
 
     private int[] generateRandomArray(int n, int min, int max) {
