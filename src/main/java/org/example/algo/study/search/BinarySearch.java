@@ -7,6 +7,12 @@ import java.util.Optional;
  */
 public class BinarySearch {
 
+    /**
+     *
+     * @param arr
+     * @param target
+     * @return index of element
+     */
     public Optional<Integer> findInSortedArray(int[] arr, long target) {
         System.out.println("Searching for: " + target);
         System.out.println("Array length: " + arr.length);
