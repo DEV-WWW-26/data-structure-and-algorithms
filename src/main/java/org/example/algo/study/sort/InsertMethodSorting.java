@@ -6,13 +6,18 @@ import org.slf4j.LoggerFactory;
 import java.util.Arrays;
 
 /**
- * Complexity O(log n)
+ * Complexity O(N^2)
  */
 public class InsertMethodSorting {
 
     private static final Logger log = LoggerFactory.getLogger(InsertMethodSorting.class);
 
     public void sort(int[] a) {
+        if (a == null || a.length == 0) {
+
+            return;
+        }
+
         int in;
         int out;
         // out - разделительный маркер
