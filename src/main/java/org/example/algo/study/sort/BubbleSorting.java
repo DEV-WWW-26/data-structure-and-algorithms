@@ -13,6 +13,11 @@ public class BubbleSorting {
     private static final Logger log = LoggerFactory.getLogger(BubbleSorting.class);
 
     public void sort(int[] a) {
+        if (a == null || a.length == 0) {
+
+            return;
+        }
+
         int out, in;
         int nElems = a.length;
 

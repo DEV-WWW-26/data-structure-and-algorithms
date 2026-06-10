@@ -19,6 +19,11 @@ public class BinarySearch {
      * @return index of element
      */
     public Optional<Integer> findInSortedArray(int[] arr, long target) {
+        if (arr == null || arr.length == 0) {
+
+            return Optional.empty();
+        }
+
         log.info("Searching for: {}", target);
         log.info("Array length: {}", arr.length);
 
