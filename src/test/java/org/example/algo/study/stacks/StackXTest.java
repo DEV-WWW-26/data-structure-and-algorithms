@@ -18,13 +18,10 @@ class StackXTest {
 
         // Пока стек не станет пустым
         while (!theStack.isEmpty()) {
+            System.out.println(theStack.peek());
             // Удалить элемент из стека
-            long value = theStack.pop();
-            // Вывод содержимого
-            System.out.print(value);
-            System.out.print(" ");
+            theStack.pop();
         }
-        System.out.println("");
 
         assertThat(theStack.isEmpty()).isTrue();
     }

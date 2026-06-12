@@ -16,29 +16,44 @@ public class StackX {
         top = -1;
     }
 
-    // Размещение элемента на вершине стека
+    /**
+     * Размещение элемента на вершине стека
+     * @param j
+     */
     public void push(long j) {
         // Увеличение top, вставка элемента
         stackArray[++top] = j;
     }
 
-    // Извлечение элемента с вершины стека
+    /**
+     * Извлечение элемента с вершины стека
+     * @return
+     */
     public long pop() {
         // Извлечение элемента, уменьшение top
         return stackArray[top--];
     }
 
-    // Чтение элемента с вершины стека
+    /**
+     * Чтение элемента с вершины стека
+     * @return
+     */
     public long peek() {
         return stackArray[top];
     }
 
-    // True, если стек пуст
+    /**
+     *
+     * @return True, если стек пуст
+     */
     public boolean isEmpty() {
         return (top == -1);
     }
 
-    // True, если стек полон
+    /**
+     *
+     * @return True, если стек полон
+     */
     public boolean isFull() {
         return (top == maxSize - 1);
     }
