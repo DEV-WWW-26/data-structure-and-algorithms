@@ -1,10 +1,13 @@
 package org.example.algo.study.stacks;
 
+import org.example.algo.study.exceptions.StackEmptyException;
+import org.example.algo.study.exceptions.StackFullException;
+
 public class StackX {
     // Размер массива
-    private int maxSize;
+    private final int maxSize;
 
-    private long[] stackArray;
+    private final long[] stackArray;
 
     // Вершина стека
     private int top;
@@ -18,25 +21,36 @@ public class StackX {
 
     /**
      * Размещение элемента на вершине стека
-     * @param j
+     *
+     * @param j число long
      */
-    public void push(long j) {
-        // Увеличение top, вставка элемента
-        stackArray[++top] = j;
+    public void push(long j) throws StackFullException {
+        if (!isFull()) {
+            // Увеличение top, вставка элемента
+            stackArray[++top] = j;
+        } else {
+            throw new StackFullException();
+        }
     }
 
     /**
      * Извлечение элемента с вершины стека
-     * @return
+     *
+     * @return long value
      */
-    public long pop() {
-        // Извлечение элемента, уменьшение top
-        return stackArray[top--];
+    public long pop() throws StackEmptyException {
+        if (!isEmpty()) {
+            // Извлечение элемента, уменьшение top
+            return stackArray[top--];
+        }
+
+        throw new StackEmptyException();
     }
 
     /**
      * Чтение элемента с вершины стека
-     * @return
+     *
+     * @return long value
      */
     public long peek() {
         return stackArray[top];
