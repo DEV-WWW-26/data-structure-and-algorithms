@@ -10,6 +10,22 @@ import static org.assertj.core.api.Assertions.assertThatThrownBy;
 class StackXTest {
 
     @Test
+    void testPeek() throws StackFullException, StackEmptyException {
+        StackX theStack = new StackX(3);
+        theStack.push(20);
+        theStack.push(40);
+        theStack.push(60);
+
+        long k =  theStack.peek();
+        assertThat(k).isEqualTo(60);
+
+        theStack.pop();
+
+        k =  theStack.peek();
+        assertThat(k).isEqualTo(40);
+    }
+
+    @Test
     void testStackX() throws StackFullException {
         StackX theStack = new StackX(10); // Создание нового стека
         theStack.push(20); // Занесение элементов в стек
@@ -24,7 +40,8 @@ class StackXTest {
             System.out.println(theStack.peek());
             try {
                 // Удалить элемент из стека
-                theStack.pop();
+                long e = theStack.pop();
+                System.out.println("Deleted element: " + e);
             } catch (StackEmptyException e) {
                 System.out.println(e.getMessage());
                 break;
