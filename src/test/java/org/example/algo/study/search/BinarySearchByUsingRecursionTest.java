@@ -1,7 +1,6 @@
-package org;
+package org.example.algo.study.search;
 
 import org.example.algo.study.ArrayTools;
-import org.example.algo.study.search.BinarySearch;
 import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
@@ -10,10 +9,10 @@ import java.util.Random;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-public class TestSearch {
+class BinarySearchByUsingRecursionTest {
 
     @Test
-    void testBinarySearch() {
+    void testFindInSortedArray() {
         int[] arr = ArrayTools.generateRandomIntArray(15, 1, 50);
         Arrays.sort(arr);
         System.out.println("Sorted array: " + Arrays.toString(arr));
@@ -21,10 +20,10 @@ public class TestSearch {
         Random rand = new Random();
         int randomIndex = rand.nextInt(arr.length);
 
-        // 3. Get the value at that index
+        // Get the value at that index
         int randomElement = arr[randomIndex];
 
-        BinarySearch binarySearch = new BinarySearch();
+        BinarySearchByUsingRecursion binarySearch = new BinarySearchByUsingRecursion();
         Optional<Integer> result = binarySearch.findInSortedArray(arr, randomElement);
 
         result.ifPresent(System.out::println);

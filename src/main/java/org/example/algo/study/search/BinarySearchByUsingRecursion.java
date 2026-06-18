@@ -18,7 +18,7 @@ public class BinarySearchByUsingRecursion {
      * @param target
      * @return index of element
      */
-    public Optional<Integer> findInSortedArray(int[] arr, long target) {
+    public Optional<Integer> findInSortedArray(int[] arr, int target) {
         if (arr == null || arr.length == 0) {
 
             return Optional.empty();
@@ -27,37 +27,7 @@ public class BinarySearchByUsingRecursion {
         log.info("Searching for: {}", target);
         log.info("Array length: {}", arr.length);
 
-        int lower = 0;
-        int upper = arr.length - 1;
-        int idx;
-
-        log.info("lower: {}", lower);
-        log.info("upper: {}", upper);
-
-        while (true) {
-            idx = (lower + upper) / 2;
-
-            log.info("idx: {}", idx);
-
-            if (arr[idx] == target) {
-
-                return Optional.of(idx);
-
-            } else if (lower > upper) {
-
-                return Optional.empty();
-
-            } else {
-                if (arr[idx] < target) {
-                    lower = idx + 1;
-                } else {
-                    upper = idx - 1;
-                }
-
-                log.info("lower: {}", lower);
-                log.info("upper: {}", upper);
-            }
-        }
+        return findRec(arr, target, 0, arr.length - 1);
     }
 
     private Optional<Integer> findRec(int[] arr, int target, int lower, int upper) {
@@ -68,7 +38,7 @@ public class BinarySearchByUsingRecursion {
         log.info("idx: {}", idx);
 
         if (arr[idx] == target) {
-            return Optional.of(arr[idx]);
+            return Optional.of(idx);
         }
 
         if (lower > upper) {
