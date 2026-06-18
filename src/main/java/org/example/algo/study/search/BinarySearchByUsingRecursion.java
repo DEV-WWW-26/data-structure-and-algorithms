@@ -45,6 +45,7 @@ public class BinarySearchByUsingRecursion {
             return Optional.empty();
         }
 
+        // Method calls itself
         if (arr[idx] < target) {
             return findRec(arr, target, idx + 1, upper);
         } else {
