@@ -1,5 +1,6 @@
 package org.example.algo.study;
 
+import java.util.Arrays;
 import java.util.Random;
 
 public class ArrayTools {
@@ -12,5 +13,9 @@ public class ArrayTools {
 
     public static int[] generateRandomIntArray(int n, int min, int max) {
         return random.ints(n, min, max).toArray();
+    }
+
+    private void none() {
+
     }
 }
