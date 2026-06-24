@@ -8,7 +8,7 @@ public class Node {
     private Node rightChild;
 
     public void displayNode() {
-
+        System.out.printf("{id=%d, data=%.2f}%n", id, data);
     }
 
     public Integer getId() {

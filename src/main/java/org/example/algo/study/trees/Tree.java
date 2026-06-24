@@ -4,13 +4,13 @@ public class Tree {
 
     private Node root;
 
-    public Node find(int key) {
+    public Node findData(int val) {
         Node current = root;
-        while (current != null && current.getData() != key) {
-            if (current.getData() < key) {
+        while (current != null && current.getData() != val) {
+            if (current.getData() < val) {
                 // to the left
                 current = current.getLeftChild();
-            } else if (current.getData() > key) {
+            } else if (current.getData() > val) {
                 // to the right
                 current = current.getRightChild();
             }
@@ -19,7 +19,7 @@ public class Tree {
         return current;
     }
 
-    public void insert(Integer id, Double val) {
+    public void insertNode(Integer id, Double val) {
         Node newNode = new Node();
         newNode.setData(val);
         newNode.setId(id);
@@ -59,6 +59,15 @@ public class Tree {
     }
 
     public void displayTree() {
+        inOrder(root);
+    }
 
+    private void inOrder(Node node) {
+        if (node == null) {
+            return;
+        }
+        inOrder(node.getLeftChild());
+        node.displayNode();
+        inOrder(node.getRightChild());
     }
 }
