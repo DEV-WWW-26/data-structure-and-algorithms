@@ -23,6 +23,35 @@ public class Tree {
         Node newNode = new Node();
         newNode.setData(val);
         newNode.setId(id);
+
+        if (root == null) {
+            root = newNode;
+        }
+
+        Node current = root;
+        Node parent;
+
+        while (true) {
+            parent = current;
+            if (id < current.getId()) {
+                // to left node
+                current =  current.getLeftChild();
+                // end of node, set node to our insert node
+                if (current == null) {
+                    parent.setLeftChild(newNode);
+                    return;
+                }
+
+            } else {
+                // to right node
+                current = current.getRightChild();
+                // end of node, set node to our insert node
+                if (current == null) {
+                    parent.setRightChild(newNode);
+                    return;
+                }
+            }
+        }
     }
 
     public void delete(int id) {
