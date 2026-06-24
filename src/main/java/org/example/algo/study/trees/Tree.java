@@ -6,11 +6,11 @@ public class Tree {
 
     public Node find(int key) {
         Node current = root;
-        while (current != null && current.getfData() != key) {
-            if (current.getfData() < key) {
+        while (current != null && current.getData() != key) {
+            if (current.getData() < key) {
                 // to the left
                 current = current.getLeftChild();
-            } else if (current.getfData() > key) {
+            } else if (current.getData() > key) {
                 // to the right
                 current = current.getRightChild();
             }
@@ -19,11 +19,17 @@ public class Tree {
         return current;
     }
 
-    public void insert(int id, double dd) {
-
+    public void insert(Integer id, Double val) {
+        Node newNode = new Node();
+        newNode.setData(val);
+        newNode.setId(id);
     }
 
     public void delete(int id) {
+
+    }
+
+    public void displayTree() {
 
     }
 }

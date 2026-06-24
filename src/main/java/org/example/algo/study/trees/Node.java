@@ -1,8 +1,9 @@
 package org.example.algo.study.trees;
 
 public class Node {
-    private int iData;
-    private double fData;
+
+    private Integer id;
+    private Double data;
     private Node leftChild;
     private Node rightChild;
 
@@ -10,20 +11,20 @@ public class Node {
 
     }
 
-    public int getiData() {
-        return iData;
+    public Integer getId() {
+        return id;
     }
 
-    public void setiData(int iData) {
-        this.iData = iData;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
-    public double getfData() {
-        return fData;
+    public Double getData() {
+        return data;
     }
 
-    public void setfData(double fData) {
-        this.fData = fData;
+    public void setData(Double data) {
+        this.data = data;
     }
 
     public Node getLeftChild() {
