@@ -67,6 +67,7 @@ public class Tree {
             return;
         }
         inOrder(node.getLeftChild());
+        // return goes here when recursion chain starts
         node.displayNode();
         inOrder(node.getRightChild());
     }
