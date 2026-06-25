@@ -1,5 +1,8 @@
 package org.example.algo.study.trees;
 
+/**
+ * Tree Node
+ */
 public class Node {
 
     private Integer id;
@@ -41,5 +44,13 @@ public class Node {
 
     public void setRightChild(Node rightChild) {
         this.rightChild = rightChild;
+    }
+
+    public boolean isLeftChild() {
+        return leftChild != null;
+    }
+
+    public boolean isRightChild() {
+        return rightChild != null;
     }
 }
