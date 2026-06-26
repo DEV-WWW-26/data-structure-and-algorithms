@@ -1,9 +1,13 @@
 package org.example.algo.study.trees;
 
+import java.util.Random;
+import java.util.logging.Logger;
+
 /**
  * Binary Tree
  */
 public class Tree {
+    private static final Logger LOG = Logger.getLogger(Tree.class.getName());
 
     private Node root;
 
@@ -29,6 +33,7 @@ public class Tree {
 
         if (root == null) {
             root = newNode;
+            return;
         }
 
         Node current = root;
@@ -42,7 +47,7 @@ public class Tree {
                 // end of node, set node to our insert node
                 if (current == null) {
                     parent.setLeftChild(newNode);
-                    return;
+                    break;
                 }
             } else {
                 // to right node
@@ -50,7 +55,7 @@ public class Tree {
                 // end of node, set node to our insert node
                 if (current == null) {
                     parent.setRightChild(newNode);
-                    return;
+                    break;
                 }
             }
         }
@@ -126,17 +131,38 @@ public class Tree {
         return last;
     }
 
-    public void displayTree() {
-        inOrder(root);
+    public void generateTree(int count) {
+        Random random = new Random();
+        for (int i = 0; i < count; i++) {
+            insertNode(random.nextInt(1000), random.nextDouble() * 1000);
+        }
     }
 
-    private void inOrder(Node node) {
-        if (node == null) {
+    public void displayTree() {
+        if (root == null) {
+            System.out.println("(empty tree)");
             return;
         }
-        inOrder(node.getLeftChild());
-        // return goes here when recursion chain starts
-        node.displayNode();
-        inOrder(node.getRightChild());
+        System.out.println(nodeToString(root));
+        printSubTree(root, "");
+    }
+
+    private void printSubTree(Node node, String prefix) {
+        boolean hasRight = node.getRightChild() != null;
+        boolean hasLeft = node.getLeftChild() != null;
+
+        if (hasRight) {
+            String connector = hasLeft ? "├── R: " : "└── R: ";
+            System.out.println(prefix + connector + nodeToString(node.getRightChild()));
+            printSubTree(node.getRightChild(), prefix + (hasLeft ? "│   " : "    "));
+        }
+        if (hasLeft) {
+            System.out.println(prefix + "└── L: " + nodeToString(node.getLeftChild()));
+            printSubTree(node.getLeftChild(), prefix + "    ");
+        }
+    }
+
+    private String nodeToString(Node node) {
+        return String.format("{id=%d, data=%.2f}", node.getId(), node.getData());
     }
 }
