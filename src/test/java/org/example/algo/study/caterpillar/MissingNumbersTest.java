@@ -12,6 +12,6 @@ class MissingNumbersTest {
         int [] a = {1, 2, 3, 5, 2, 2};
         MissingNumbers missingNumbers = new MissingNumbers();
 
-        assertThat(missingNumbers.getMissingNumber(a)).isEqualTo(0);
+        assertThat(missingNumbers.getMissingNumber(a)).isEqualTo(4);
     }
 }
