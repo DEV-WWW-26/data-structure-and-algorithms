@@ -9,7 +9,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class LongestConsecutiveSubsequenceTest {
 
     @Test
-    void getLongestConsecutiveSubsequenceElementsCount() {
+    void testGetLongestConsecutiveSubsequenceElementsCount() {
         int [] a = {1, 2, 3, 5, 2, 2};
         LongestConsecutiveSubsequence longestConsecutiveSubsequence = new LongestConsecutiveSubsequence();
 
