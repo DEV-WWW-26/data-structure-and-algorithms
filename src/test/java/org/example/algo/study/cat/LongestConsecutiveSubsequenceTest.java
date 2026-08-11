@@ -1,10 +1,8 @@
-package org.example.algo.study.caterpillar;
+package org.example.algo.study.cat;
 
-import org.example.algo.study.ArrayTools;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.junit.jupiter.api.Assertions.*;
 
 class LongestConsecutiveSubsequenceTest {
 

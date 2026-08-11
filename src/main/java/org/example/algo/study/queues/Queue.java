@@ -1,6 +1,7 @@
 package org.example.algo.study.queues;
 
 public class Queue {
+
     private int maxSize;
     private int[] arr;
     private int front;

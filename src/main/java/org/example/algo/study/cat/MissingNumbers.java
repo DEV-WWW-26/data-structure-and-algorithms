@@ -1,4 +1,4 @@
-package org.example.algo.study.caterpillar;
+package org.example.algo.study.cat;
 
 import java.util.Arrays;
 
@@ -10,10 +10,10 @@ public class MissingNumbers {
         }
         Arrays.sort(a);
         int res = 1;
-        for (int i = 0; i < a.length; i++) {
-            if (a[i] == res) {
+        for (int j : a) {
+            if (j == res) {
                 res++;
-            } else if (a[i] > res) {
+            } else if (j > res) {
                 break;
             }
         }

@@ -1,4 +1,4 @@
-package org.example.algo.study.caterpillar;
+package org.example.algo.study.cat;
 
 import java.util.Arrays;
 
