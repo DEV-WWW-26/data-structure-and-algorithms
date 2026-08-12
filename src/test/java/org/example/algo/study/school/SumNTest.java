@@ -52,7 +52,7 @@ class SumNTest {
         System.out.println("277 & 432 = " + (277 & 432));
         System.out.println("277 | 432 = " + (277 | 432));
         System.out.println("277 ^ 432 = " + (277 ^ 432) + " (XOR)");
-        System.out.println("277 << 3 = " + (277 << 3) + " " + Integer.toBinaryString((277 << 3)) + " (moving bits to the left)");
-
+        System.out.println("277 << 3 = " + (277 << 3) + " " + Integer.toBinaryString(277 << 3) + " (moving bits to the left)");
+        System.out.println("35 >> 2 = " + (35 >> 2) + " " + Integer.toBinaryString(35 >> 2) + " (moving bits to the right)");
     }
 }
