@@ -20,4 +20,17 @@ class SumNTest {
 
         assertThat(sumN.sum(-5)).isEqualTo(-14);
     }
+
+    @Test
+    void testMath() {
+        int a = 583;
+        int k = a / 10;
+        int c = (a / 10) % 10;
+        int b = a % 10;
+
+        System.out.println("Заданное число: " + a);
+        System.out.println("количество 10: " + k);
+        System.out.println("остаток деления на 10 от количество 10: " + c);
+        System.out.println("остаток деления на 10 : " + b);
+    }
 }
