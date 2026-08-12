@@ -33,4 +33,26 @@ class SumNTest {
         System.out.println("остаток деления на 10 от количество 10: " + c);
         System.out.println("остаток деления на 10 : " + b);
     }
+
+    @Test
+    void testBits() {
+        int a = 13;
+        String binary = Integer.toBinaryString(a);
+        // applying bit operator "NOT"
+        String binaryReverted = Integer.toBinaryString(~a);
+
+        System.out.println(binary);
+        System.out.println(binaryReverted);
+
+        // applying bit operator "AND"
+        System.out.println(13 & 15);
+        System.out.println();
+        System.out.println(277 + " " + Integer.toBinaryString(277));
+        System.out.println(432 + " " + Integer.toBinaryString(432));
+        System.out.println("277 & 432 = " + (277 & 432));
+        System.out.println("277 | 432 = " + (277 | 432));
+        System.out.println("277 ^ 432 = " + (277 ^ 432) + " (XOR)");
+        System.out.println("277 << 3 = " + (277 << 3) + " " + Integer.toBinaryString((277 << 3)) + " (moving bits to the left)");
+
+    }
 }
